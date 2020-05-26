@@ -32,4 +32,5 @@ jobs:
           brew install pre-commit terraform-docs terraform tflint
       - name: Check All Files
         run: |
+          terraform init
           pre-commit run --all-files
