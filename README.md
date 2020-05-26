@@ -2,7 +2,7 @@
 
 | Name | Version |
 |------|---------|
-| aws | 2.63 |
+| aws | 2.52 |
 
 ## Providers
 
@@ -12,8 +12,9 @@ No provider.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| aws\_region | n/a | `string` | `"The region where the EKS cluster is deployed"` | no |
 | cluster\_name | Name of the EKS cluster | `string` | n/a | yes |
-| env\_name | Environemt name | `string` | n/a | yes |
+| env\_name | Environment name | `string` | n/a | yes |
 | spot\_enabled | Is the node group working on Spot servers | `bool` | `true` | no |
 | vpc\_id | The clusters VPC id | `string` | n/a | yes |
 

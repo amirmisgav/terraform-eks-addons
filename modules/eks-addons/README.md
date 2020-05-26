@@ -3,12 +3,13 @@
 | Name | Version |
 |------|---------|
 | terraform | >= 0.12.6 |
+| aws | 2.52 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| aws | n/a |
+| aws | 2.52 |
 | helm | n/a |
 | kubernetes | n/a |
 | null | n/a |
@@ -19,6 +20,7 @@
 |------|-------------|------|---------|:--------:|
 | argocd\_enabled | if ArgoCD should be added to the cluster | `bool` | n/a | yes |
 | aws\_cluster\_autoscaler\_enabled | if cluster autoscaler should be installed? | `bool` | `true` | no |
+| aws\_region | The Region where the cluster is be deployed. | `string` | n/a | yes |
 | cluster\_name | The name of the EKS cluster. | `string` | n/a | yes |
 | env\_name | The name of the env | `string` | n/a | yes |
 | external\_secrets\_enabled | Kubernetes External Secrets allows you to use external secret management systems (e.g., AWS Secrets Manager) | `bool` | `true` | no |

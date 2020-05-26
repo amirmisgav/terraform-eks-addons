@@ -7,4 +7,5 @@ module "addons" {
   spot_enabled     = var.spot_enabled
   argocd_enabled   = true
   kube2iam_enabled = false
+  aws_region       = var.aws_region
 }

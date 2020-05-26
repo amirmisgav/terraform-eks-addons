@@ -1,6 +1,5 @@
 terraform {
   required_version = ">= 0.12.6"
-
 }
 
 provider "kubernetes" {
@@ -18,4 +17,10 @@ provider "helm" {
     cluster_ca_certificate = base64decode(data.aws_eks_cluster.this.certificate_authority.0.data)
     load_config_file       = false
   }
+}
+
+
+provider "aws" {
+  region  = var.aws_region
+  version = 2.52
 }

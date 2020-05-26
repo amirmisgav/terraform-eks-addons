@@ -1,5 +1,3 @@
-// TODO: Disabled becuse i think it is casuing high costs
-// TODO: It is now sending every container log including the system logs
 //# Install fluentd-cloudwatch
 //resource "helm_release" "fluentd_cloudwatch" {
 //  depends_on = [
@@ -8,7 +6,7 @@
 //
 //  name       = "fluentd-cloudwatch"
 //  chart      = "fluentd-cloudwatch"
-//  repository = data.helm_repository.incubator.metadata.0.name
+//  repository = "https://kubernetes-charts-incubator.storage.googleapis.com"
 //  namespace  = "amazon"
 //  version    = "0.12.0"
 //
@@ -83,7 +81,7 @@ resource "helm_release" "metrics_server" {
   ]
   name       = "metrics-server"
   chart      = "metrics-server"
-  repository = data.helm_repository.stable.metadata.0.name
+  repository = "https://kubernetes-charts.storage.googleapis.com"
   namespace  = "metrics"
   version    = "2.8.7"
 }
@@ -93,7 +91,7 @@ resource "helm_release" "aws_alb_ingress_controller" {
 
   name       = "aws-alb-ingress-controller"
   chart      = "aws-alb-ingress-controller"
-  repository = data.helm_repository.incubator.metadata.0.name
+  repository = "https://kubernetes-charts-incubator.storage.googleapis.com"
   namespace  = "kube-system"
   version    = "0.1.11"
 
@@ -133,7 +131,7 @@ resource "helm_release" "external_dns" {
 
   name       = "external-dns"
   chart      = "external-dns"
-  repository = data.helm_repository.stable.metadata.0.name
+  repository = "https://kubernetes-charts.storage.googleapis.com"
   namespace  = "kube-system"
   version    = "2.19.1"
   timeout    = 60
@@ -179,7 +177,7 @@ resource "helm_release" "cluster_autoscaler" {
   count      = var.aws_cluster_autoscaler_enabled ? 1 : 0
   name       = "aws-cluster-autoscaler"
   chart      = "cluster-autoscaler"
-  repository = data.helm_repository.stable.metadata.0.name
+  repository = "https://kubernetes-charts.storage.googleapis.com"
   namespace  = "kube-system"
   timeout    = 600
 
@@ -214,7 +212,7 @@ resource "helm_release" "k8s-spot-termination-handler" {
   count      = var.spot_enabled ? 1 : 0
   name       = "k8s-spot-termination-handler"
   chart      = "k8s-spot-termination-handler"
-  repository = data.helm_repository.stable.metadata.0.name
+  repository = "https://kubernetes-charts.storage.googleapis.com"
   namespace  = "kube-system"
   timeout    = 60
 
@@ -249,7 +247,7 @@ resource "helm_release" "kube2iam" {
   count      = var.kube2iam_enabled ? 1 : 0
   name       = "kube2iam"
   chart      = "kube2iam"
-  repository = data.helm_repository.stable.metadata.0.name
+  repository = "https://kubernetes-charts.storage.googleapis.com"
   namespace  = "kube-system"
   timeout    = 60
 

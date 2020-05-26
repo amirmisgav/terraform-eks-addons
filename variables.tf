@@ -7,7 +7,7 @@ variable "cluster_name" {
 
 variable "env_name" {
   type        = string
-  description = "Environemt name"
+  description = "Environment name"
 }
 
 variable "vpc_id" {
@@ -19,4 +19,9 @@ variable "spot_enabled" {
   type        = bool
   description = "Is the node group working on Spot servers"
   default     = true
+}
+
+variable "aws_region" {
+  type    = string
+  default = "The region where the EKS cluster is deployed"
 }

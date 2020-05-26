@@ -41,3 +41,8 @@ variable "external_secrets_enabled" {
   default     = true
   description = "Kubernetes External Secrets allows you to use external secret management systems (e.g., AWS Secrets Manager)"
 }
+
+variable "aws_region" {
+  description = "The Region where the cluster is be deployed."
+  type        = string
+}
