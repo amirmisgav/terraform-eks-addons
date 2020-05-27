@@ -12,7 +12,7 @@ No provider.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| aws\_region | n/a | `string` | `"The region where the EKS cluster is deployed"` | no |
+| aws\_region | The region where the EKS cluster is deployed | `string` | n/a | yes |
 | cluster\_name | Name of the EKS cluster | `string` | n/a | yes |
 | env\_name | Environment name | `string` | n/a | yes |
 | spot\_enabled | Is the node group working on Spot servers | `bool` | `true` | no |
