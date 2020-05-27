@@ -23,5 +23,5 @@ variable "spot_enabled" {
 
 variable "aws_region" {
   type    = string
-  default = "The region where the EKS cluster is deployed"
+  description = "The region where the EKS cluster is deployed"
 }
